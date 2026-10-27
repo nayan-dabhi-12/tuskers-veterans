@@ -1,0 +1,12 @@
+Drop the official artwork here.
+
+aoc-crest.png       - masthead crest, registration panel, favicon
+insignia-1855.png   - "The Badge Through the Years" timeline
+insignia-1896.png
+insignia-1918.png
+insignia-1922.png
+insignia-1954.png
+insignia-1989.png
+
+Transparent PNGs work best. Files are picked up automatically on the
+next page load; until then a stylised placeholder is drawn instead.

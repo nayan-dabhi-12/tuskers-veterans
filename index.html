@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuskers Veterans Portal &mdash; Army Ordnance Corps</title>
+<meta name="description" content="Official veterans portal of the Army Ordnance Corps (Tuskers) — welfare schemes, pension, placements, institutes booking, grievances and veteran services.">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234A5D23'/><text x='16' y='23' font-size='18' text-anchor='middle' fill='%23C8A951'>🐘</text></svg>">
+</head>
+<body>
+
+<!-- ============ TRICOLOUR STRIP ============ -->
+<div class="tricolour" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<!-- ============ UTILITY BAR ============ -->
+<div class="utilbar">
+  <div class="wrap utilbar__in">
+    <p class="utilbar__gov">भारत सरकार <span class="sep">|</span> Government of India <span class="sep">|</span> Ministry of Defence</p>
+    <div class="utilbar__tools">
+      <a href="#main" class="skip">Skip to content</a>
+      <div class="fontsize" role="group" aria-label="Text size">
+        <button type="button" data-font="dec" title="Decrease text size">A&minus;</button>
+        <button type="button" data-font="reset" title="Normal text size">A</button>
+        <button type="button" data-font="inc" title="Increase text size">A+</button>
+      </div>
+      <button type="button" class="tbtn" id="contrastBtn" aria-pressed="false" title="Toggle high contrast">◐ Contrast</button>
+      <span class="utilbar__user" id="userChip" hidden></span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MASTHEAD ============ -->
+<header class="masthead">
+  <div class="wrap masthead__in">
+    <a class="brand" href="#/home" aria-label="Tuskers Veterans Portal home">
+      <span class="brand__crest" aria-hidden="true">
+        <!-- Stylised Tusker crest placeholder — replace with official AOC insignia -->
+        <svg viewBox="0 0 100 110" role="img" aria-label="Tuskers crest">
+          <defs>
+            <linearGradient id="gcrest" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#6B7F35"/><stop offset="1" stop-color="#2E3D14"/>
+            </linearGradient>
+          </defs>
+          <path d="M50 2 L94 18 v42c0 24-18 40-44 48C24 100 6 84 6 60V18Z" fill="url(#gcrest)" stroke="#C8A951" stroke-width="3"/>
+          <path d="M50 26c11 0 18 7 18 17 0 7-3 11-3 17 0 5 3 7 3 11H32c0-4 3-6 3-11 0-6-3-10-3-17 0-10 7-17 18-17Z" fill="#C8A951"/>
+          <path d="M32 40c-6-2-10 2-10 8s5 9 9 8M68 40c6-2 10 2 10 8s-5 9-9 8" fill="none" stroke="#C8A951" stroke-width="4" stroke-linecap="round"/>
+          <path d="M43 71c-3 6-4 12-3 18M57 71c3 6 4 12 3 18" fill="none" stroke="#F7F5EF" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="50" cy="60" r="4" fill="#2E3D14"/>
+        </svg>
+      </span>
+      <span class="brand__txt">
+        <strong>TUSKERS</strong>
+        <span class="brand__sub">Veterans Portal &middot; Army Ordnance Corps</span>
+        <span class="brand__motto">शस्त्र से शक्ति &middot; Sustaining the Sinews of War</span>
+      </span>
+    </a>
+
+    <div class="masthead__right">
+      <form class="gsearch" role="search" id="globalSearch">
+        <input type="search" id="globalSearchInput" placeholder="Search the portal…" aria-label="Search the portal" autocomplete="off">
+        <button type="submit" aria-label="Search">⌕</button>
+        <div class="gsearch__results" id="gsearchResults" hidden></div>
+      </form>
+      <button class="btn btn--gold" id="authBtn" type="button">Sign in</button>
+      <button class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span><em class="sr">Menu</em>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ REGIMENTAL COLOURS ============ -->
+<div class="ribbon" role="presentation" title="Regimental colours of the Army Ordnance Corps"></div>
+
+<!-- ============ PRIMARY NAV ============ -->
+<nav class="nav" id="primaryNav" aria-label="Primary">
+  <div class="wrap">
+    <ul class="nav__list" id="navList"><!-- built by app.js --></ul>
+  </div>
+</nav>
+
+<!-- ============ MAIN ============ -->
+<main id="main" tabindex="-1">
+  <div id="view" class="view"><!-- routed content --></div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<div class="ribbon ribbon--thick" role="presentation"></div>
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div>
+      <h4>Tuskers Veterans Portal</h4>
+      <p class="muted">A single window for veterans, veer naris and families of the Army Ordnance Corps — welfare, pension, placement, grievance redressal and regimental fellowship.</p>
+      <p class="muted small">Maintained by the Veteran Cell, AOC Centre, Secunderabad.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="foot__links" id="footLinks"></ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul class="foot__links">
+        <li><a href="#/grievance">Register a Grievance</a></li>
+        <li><a href="#/booking">Institute Booking</a></li>
+        <li><a href="#/pdf">Search Documents</a></li>
+        <li><a href="#/jobs">Jobs &amp; Placement</a></li>
+        <li><a href="#/blog">Share Your Thoughts</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Veteran Cell</h4>
+      <p class="muted small">AOC Centre, Secunderabad &ndash; 500 015<br>Telangana, India</p>
+      <p class="muted small">Helpline: <a href="tel:1800000000">1800-XXX-XXXX</a><br>Email: <a href="mailto:veterancell@aoc.mil">veterancell[at]aoc[dot]mil</a></p>
+      <p class="muted small">Mon&ndash;Fri, 0900&ndash;1700 h</p>
+    </div>
+  </div>
+  <div class="foot__bar">
+    <div class="wrap foot__bar-in">
+      <p>&copy; <span id="yr"></span> Army Ordnance Corps &mdash; Tuskers Veterans Portal. All rights reserved.</p>
+      <p class="muted small">Demonstration build. Content marked <em>[to be confirmed]</em> must be verified against official records before publication.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ AUTH MODAL ============ -->
+<div class="modal" id="authModal" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel auth" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <button class="modal__x" data-close aria-label="Close">&times;</button>
+    <div class="auth__aside">
+      <div class="auth__crest" aria-hidden="true">🐘</div>
+      <h3>Tuskers Veterans Portal</h3>
+      <p>Registration is open to all serving and retired personnel of the Army Ordnance Corps, and to next of kin of departed comrades.</p>
+      <ul class="auth__pts">
+        <li>Welfare schemes &amp; distress grants</li>
+        <li>Pension &amp; entitlement guidance</li>
+        <li>Placement and second-career support</li>
+        <li>Institute and mess bookings</li>
+        <li>Grievance registration &amp; tracking</li>
+      </ul>
+      <p class="auth__note">Once Tusker, always a Tusker.</p>
+    </div>
+    <div class="auth__main">
+      <div class="tabs" role="tablist" aria-label="Sign in or register">
+        <button role="tab" class="tabs__t is-on" data-authtab="login" aria-selected="true">Sign in</button>
+        <button role="tab" class="tabs__t" data-authtab="register" aria-selected="false">Register</button>
+      </div>
+
+      <!-- LOGIN -->
+      <form class="form" id="loginForm" data-authpane="login">
+        <h2 id="authTitle">Veteran sign in</h2>
+        <p class="form__lede">Use your IC / Army number and password.</p>
+        <div class="field">
+          <label for="li_ic">IC / Army Number <span class="req">*</span></label>
+          <input id="li_ic" name="ic" required placeholder="e.g. IC-54321H or 15123456M" autocomplete="username">
+          <small class="hint">Officers: IC/SS/TA number. JCOs &amp; OR: 8-digit Army number with suffix.</small>
+        </div>
+        <div class="field">
+          <label for="li_pw">Password <span class="req">*</span></label>
+          <div class="pw">
+            <input id="li_pw" name="password" type="password" required minlength="8" autocomplete="current-password">
+            <button type="button" class="pw__eye" data-eye="li_pw" aria-label="Show password">👁</button>
+          </div>
+        </div>
+        <div class="row row--split">
+          <label class="check"><input type="checkbox" name="remember"> Remember me</label>
+          <a href="#/contact" class="link small" data-close>Forgot password?</a>
+        </div>
+        <button class="btn btn--green btn--wide" type="submit">Sign in</button>
+        <p class="form__alt">New to the portal? <button type="button" class="link" data-authtab="register">Create an account</button></p>
+        <p class="form__alt"><button type="button" class="link" id="guestBtn">Continue as guest &rarr;</button></p>
+      </form>
+
+      <!-- REGISTER -->
+      <form class="form" id="registerForm" data-authpane="register" hidden novalidate>
+        <h2>Veteran registration</h2>
+        <p class="form__lede">All fields marked <span class="req">*</span> are mandatory. Your record is verified against Centre records before activation.</p>
+
+        <fieldset>
+          <legend>Service particulars</legend>
+          <div class="grid2">
+            <div class="field">
+              <label for="rg_ic">IC / Army Number <span class="req">*</span></label>
+              <input id="rg_ic" name="ic" required placeholder="IC-54321H">
+            </div>
+            <div class="field">
+              <label for="rg_rank">Rank at retirement <span class="req">*</span></label>
+              <select id="rg_rank" name="rank" required>
+                <option value="">— Select —</option>
+                <optgroup label="Officers">
+                  <option>Lieutenant</option><option>Captain</option><option>Major</option>
+                  <option>Lieutenant Colonel</option><option>Colonel</option><option>Brigadier</option>
+                  <option>Major General</option><option>Lieutenant General</option>
+                </optgroup>
+                <optgroup label="JCOs">
+                  <option>Naib Subedar</option><option>Subedar</option><option>Subedar Major</option>
+                </optgroup>
+                <optgroup label="Other Ranks">
+                  <option>Sepoy</option><option>Naik</option><option>Havildar</option>
+                </optgroup>
+                <optgroup label="Civilian">
+                  <option>Defence Civilian</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="field">
+              <label for="rg_name">Full name <span class="req">*</span></label>
+              <input id="rg_name" name="name" required placeholder="As per service record">
+            </div>
+            <div class="field">
+              <label for="rg_trade">Trade / Arm of service</label>
+              <input id="rg_trade" name="trade" placeholder="e.g. Ammunition, Materials Management">
+            </div>
+            <div class="field">
+              <label for="rg_doc">Date of commission / enrolment</label>
+              <input id="rg_doc" name="doc" type="date">
+            </div>
+            <div class="field">
+              <label for="rg_dor">Date of retirement <span class="req">*</span></label>
+              <input id="rg_dor" name="dor" type="date" required>
+            </div>
+            <div class="field">
+              <label for="rg_unit">Mother unit <span class="req">*</span></label>
+              <input id="rg_unit" name="unit" list="unitList" required placeholder="Start typing…">
+              <datalist id="unitList"></datalist>
+            </div>
+            <div class="field">
+              <label for="rg_ppo">PPO number</label>
+              <input id="rg_ppo" name="ppo" placeholder="Pension Payment Order no.">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Contact &amp; identity</legend>
+          <div class="grid2">
+            <div class="field">
+              <label for="rg_email">Email address <span class="req">*</span></label>
+              <input id="rg_email" name="email" type="email" required placeholder="name@example.com" autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="rg_mob">Mobile number <span class="req">*</span></label>
+              <input id="rg_mob" name="mobile" type="tel" required pattern="[0-9]{10}" placeholder="10-digit number" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="rg_dob">Date of birth <span class="req">*</span></label>
+              <input id="rg_dob" name="dob" type="date" required>
+            </div>
+            <div class="field">
+              <label for="rg_state">State / UT of residence <span class="req">*</span></label>
+              <select id="rg_state" name="state" required><option value="">— Select —</option></select>
+            </div>
+            <div class="field field--full">
+              <label for="rg_addr">Present address</label>
+              <textarea id="rg_addr" name="address" rows="2" placeholder="House, street, city, PIN"></textarea>
+            </div>
+            <div class="field">
+              <label for="rg_esm">ESM identity card number</label>
+              <input id="rg_esm" name="esm" placeholder="ZSB / RSB issued card">
+            </div>
+            <div class="field">
+              <label for="rg_cat">Registering as <span class="req">*</span></label>
+              <select id="rg_cat" name="category" required>
+                <option value="">— Select —</option>
+                <option>Veteran (self)</option>
+                <option>Serving personnel</option>
+                <option>Veer Nari / spouse</option>
+                <option>Next of kin / dependant</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Create password</legend>
+          <div class="grid2">
+            <div class="field">
+              <label for="rg_pw">Password <span class="req">*</span></label>
+              <div class="pw">
+                <input id="rg_pw" name="password" type="password" required minlength="8" autocomplete="new-password">
+                <button type="button" class="pw__eye" data-eye="rg_pw" aria-label="Show password">👁</button>
+              </div>
+              <div class="meter"><span id="pwBar"></span></div>
+              <small class="hint" id="pwHint">Minimum 8 characters, with a number and a capital letter.</small>
+            </div>
+            <div class="field">
+              <label for="rg_pw2">Confirm password <span class="req">*</span></label>
+              <input id="rg_pw2" name="password2" type="password" required minlength="8" autocomplete="new-password">
+            </div>
+          </div>
+          <label class="check"><input type="checkbox" name="declare" required> I declare that the particulars given above are true to the best of my knowledge, and I consent to their verification against Centre records. <span class="req">*</span></label>
+        </fieldset>
+
+        <button class="btn btn--green btn--wide" type="submit">Submit registration</button>
+        <p class="form__alt">Already registered? <button type="button" class="link" data-authtab="login">Sign in</button></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<button class="totop" id="toTop" aria-label="Back to top" hidden>↑</button>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
